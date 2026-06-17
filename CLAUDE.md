@@ -1,8 +1,12 @@
 @AGENTS.md
 
-# Project: thecatnbutterfly.com → Next.js Migration
+# Project: thecatandbutterfly.com — Next.js Site
 
-This repo is a faithful migration of the Wix site **https://www.thecatnbutterfly.com** (author "Boon" / *The Cat and Butterfly*) into a self-hosted Next.js App Router application deployable on Vercel.
+This repo is the Next.js App Router site for **https://www.thecatandbutterfly.com** (author "Boon" / *The Cat and Butterfly*), deployable on Vercel.
+
+**Domain:** `thecatandbutterfly.com` — registered at GoDaddy, nameservers currently GoDaddy defaults (`ns05/ns06.domaincontrol.com`). Plan: point nameservers to Cloudflare, then add Vercel DNS records there.
+
+**Source site (old, being retired):** `thecatnbutterfly.com` — a Wix site (different domain). Content was scraped from there to build this repo. That domain is registered at Wix and is being abandoned.
 
 ---
 
@@ -89,7 +93,7 @@ npm run lint         # ESLint
 | Variable | Required | Description |
 |---|---|---|
 | `RESEND_API_KEY` | Yes (for email) | Resend API key — contact form uses this to send mail |
-| `CONTACT_TO_EMAIL` | No | Recipient email for contact submissions (defaults to `hello@thecatnbutterfly.com`) |
+| `CONTACT_TO_EMAIL` | No | Recipient email for contact submissions (defaults to `hello@thecatandbutterfly.com`) |
 
 Copy `.env.example` → `.env.local` and fill in values. **Never commit `.env.local`.**
 

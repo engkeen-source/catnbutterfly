@@ -32,11 +32,11 @@ export async function POST(request: NextRequest) {
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);
-  const toEmail = process.env.CONTACT_TO_EMAIL ?? "hello@thecatnbutterfly.com";
+  const toEmail = process.env.CONTACT_TO_EMAIL ?? "hello@thecatandbutterfly.com";
 
   try {
     await resend.emails.send({
-      from: "The Cat And Butterfly <noreply@thecatnbutterfly.com>",
+      from: "The Cat And Butterfly <noreply@thecatandbutterfly.com>",
       to: toEmail,
       replyTo: email,
       subject: `New message from ${name}`,
