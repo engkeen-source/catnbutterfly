@@ -39,44 +39,48 @@ export default function HowAreYouDoingPage() {
   return (
     <div className="bg-brand-cream">
       {/* ─── Hero ────────────────────────────────────────────── */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          {/* Book mockup */}
+      <section className="py-16 px-6">
+        {/* Centered heading above the grid */}
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h1 className="font-serif text-4xl sm:text-5xl text-brand-brown leading-tight mb-4">
+            How Are You Doing Today?
+          </h1>
+          <p className="text-brand-brown/70 italic mb-6">
+            A Companion to Reclaim Your Authentic Life
+          </p>
+          <p className="font-bold text-brand-brown">
+            Foreword by Wilson Pranoto,
+            <br />
+            founder of <em>Journey of Humanity</em>
+          </p>
+        </div>
+
+        {/* Two-column grid */}
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+          {/* Book mockup — fills the column */}
           <div className="flex justify-center">
-            <div className="relative w-56 sm:w-72 shadow-2xl">
-              <Image
-                src="/images/474399_f6345447f5234defaac5c82c97bcccf1~mv2.png"
-                alt="How Are You Doing Today? — 3D book mockup"
-                width={414}
-                height={622}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
+            <Image
+              src="/images/474399_f6345447f5234defaac5c82c97bcccf1~mv2.png"
+              alt="How Are You Doing Today? — 3D book mockup"
+              width={414}
+              height={622}
+              className="w-full max-w-sm md:max-w-none h-auto shadow-2xl"
+              priority
+            />
           </div>
 
           {/* Text */}
           <div>
-            <p className="text-xs tracking-[0.25em] uppercase text-brand-gray mb-3">
-              Foreword by Wilson Pranoto, founder of Journey of Humanity
-            </p>
-            <h1 className="font-serif text-4xl sm:text-5xl text-brand-brown leading-tight mb-4">
-              How Are You Doing Today?
-            </h1>
-            <p className="text-brand-brown/70 italic mb-2">
-              A Companion to Reclaim Your Authentic Life
-            </p>
-            <span className="accent-rule" style={{ margin: "1.25rem 0" }} />
-            <p className="text-brand-brown/70 leading-relaxed mb-8">
+            <p className="text-brand-brown/70 leading-relaxed mb-6">
               <em>How Are You Doing Today?</em> illuminates the path for the
               spiritual warrior in you to be connected with who you really are.
             </p>
-            <ul className="space-y-2 text-sm text-brand-brown/70 mb-8">
-              <li>✦ Your energy creates your reality.</li>
-              <li>✦ The greatest love is self-love.</li>
-              <li>✦ There are no coincidences in life.</li>
-              <li>✦ Everything is right sometimes.</li>
-            </ul>
+            <div className="italic text-brand-brown/70 space-y-1 mb-6">
+              <p>Your energy creates your reality.</p>
+              <p>The greatest love is self-love.</p>
+              <p>There are no coincidences in life.</p>
+              <p>Everything is right sometimes.</p>
+            </div>
             <p className="text-brand-brown/70 leading-relaxed text-sm mb-8">
               Through a series of simple, reflective questions, you are invited
               to meet the raw, unadorned experience of being alive. Everything
@@ -86,30 +90,52 @@ export default function HowAreYouDoingPage() {
             </p>
 
             {/* Purchase */}
-            <p className="text-xs tracking-[0.25em] uppercase text-brand-gray mb-4">
-              Purchase Now
+            <p className="font-serif text-2xl font-bold tracking-widest text-brand-brown text-center mb-6">
+              PURCHASE NOW
             </p>
-            <div className="flex flex-col gap-3 mb-6">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-row gap-6 justify-center items-start mb-6">
+              {/* Amazon Kindle — solid teal button matching live site */}
+              <div className="flex flex-col items-center gap-2">
                 <span className="text-xs text-brand-gray/80">*e-book</span>
                 <a
                   href="https://www.amazon.com/dp/B0FFHKS19F"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-7 py-3 bg-brand-brown text-brand-cream text-xs tracking-widest uppercase hover:opacity-80 transition-opacity duration-200"
+                  className="inline-flex items-center justify-center w-44 h-16 bg-[#417586] hover:opacity-90 transition-opacity duration-200"
                 >
-                  Amazon Kindle
+                  <div className="flex flex-col items-center gap-0.5">
+                    <div className="flex items-baseline gap-0">
+                      <span className="text-white font-black leading-none" style={{ fontSize: "20px" }}>
+                        amazon
+                      </span>
+                      <span className="text-[#FF9900] font-black leading-none" style={{ fontSize: "20px" }}>
+                        kindle
+                      </span>
+                    </div>
+                    {/* Amazon smile arrow */}
+                    <svg viewBox="0 0 80 10" width="68" height="8" fill="none" aria-hidden="true">
+                      <path d="M4 7 Q20 2 40 4 Q60 6 74 2" stroke="#FF9900" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                      <path d="M70 1 L75 3 L70 5.5" stroke="#FF9900" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                    </svg>
+                  </div>
                 </a>
               </div>
-              <div className="flex items-center gap-3">
+              {/* PayPal — white button with teal border matching live site */}
+              <div className="flex flex-col items-center gap-2">
                 <span className="text-xs text-brand-gray/80">*physical book</span>
                 <a
                   href="https://www.paypal.com/ncp/payment/4YMFARPNQPHCU"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-7 py-3 border border-brand-brown text-brand-brown text-xs tracking-widest uppercase hover:bg-brand-brown hover:text-brand-cream transition-colors duration-200"
+                  className="relative inline-flex items-center justify-center w-44 h-16 bg-white border-[5px] border-[#6298AA] hover:opacity-90 transition-opacity duration-200"
                 >
-                  Paypal
+                  <Image
+                    src="/images/paypal.png"
+                    alt="PayPal"
+                    fill
+                    className="object-contain p-3"
+                    sizes="176px"
+                  />
                 </a>
               </div>
             </div>
@@ -244,15 +270,26 @@ export default function HowAreYouDoingPage() {
       {/* ─── Testimonials ────────────────────────────────────── */}
       <section className="py-16 px-6 bg-brand-cream-alt">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-3xl text-brand-brown text-center mb-12">
-            What Readers Are Saying
-          </h2>
           <div className="grid sm:grid-cols-2 gap-8">
             {testimonials.map(({ quote, name, title }) => (
               <blockquote
                 key={name}
                 className="bg-brand-cream p-6 border-l-2 border-brand-red"
               >
+                {/* 5-star rating */}
+                <div aria-label="5 out of 5 stars" className="flex gap-0.5 mb-3">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <svg
+                      key={s}
+                      aria-hidden="true"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="w-4 h-4 text-amber-400"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
                 <p className="text-sm text-brand-brown/75 leading-relaxed italic mb-4">
                   &ldquo;{quote}&rdquo;
                 </p>
