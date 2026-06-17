@@ -1,26 +1,97 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Brand palette */
+  --color-brand-brown:       #2F2B26;
+  --color-brand-brown-light: #525150;
+  --color-brand-cream:       #FFFEF9;
+  --color-brand-cream-alt:   #FBF5E7;
+  --color-brand-teal:        #2b5672;
+  --color-brand-red:         #df3131;
+  --color-brand-gray:        #646464;
+
+  /* Semantic defaults */
+  --color-background: #FFFEF9;
+  --color-foreground: #2F2B26;
+
+  /* Font stacks */
+  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans:  var(--font-jost), "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFEF9;
+  color: #2F2B26;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Prose overrides */
+.prose {
+  --tw-prose-body:          #2F2B26;
+  --tw-prose-headings:      #2F2B26;
+  --tw-prose-links:         #2b5672;
+  --tw-prose-bold:          #2F2B26;
+  --tw-prose-quotes:        #525150;
+  --tw-prose-quote-borders: #df3131;
+  font-family: var(--font-sans);
+}
+.prose h1,
+.prose h2,
+.prose h3 {
+  font-family: var(--font-serif);
+}
+
+/* Underline-grow nav link */
+.nav-link {
+  position: relative;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #2F2B26;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  width: 100%;
+}
+
+/* Red accent rule */
+.accent-rule {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #df3131;
+  margin: 1.5rem auto;
+}
+
+/* Fade-in-up */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.75s ease both;
 }
